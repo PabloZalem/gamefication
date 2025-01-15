@@ -1,29 +1,39 @@
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 
 public class Tests {
     @Test
-    public void testSingleWord() {
-        assertEquals("WORD", formatLine("WORD"));
+    public void equalWord() {
+        assertEquals("word", formatedLine("word"));
     }
 
     @Test
-    public void testLeadingSpace() {
-        assertEquals("WORD", formatLine("  WORD"));
+    public void spaceInitical(){
+        assertEquals("word", formatedLine("     word"));
     }
 
     @Test
-    public void testTrailingSpace() {
-        assertEquals("WORD", formatLine("WORD     "));
+    public void spaceAfterWord() {
+        assertEquals("word", formatedLine("word      "));
     }
 
     @Test
-    public void testMultipleSpacesBetweenWords() {
-        assertEquals("HELLO WORLD", formatLine("HELLO     WORLD"));
+    public void spaceBetweenWord() {
+        assertEquals("word", formatedLine("   word     "));
     }
 
-    private static String formatLine(String word) {
+    @Test
+    public void throwAnException() {
+        assertThrows(TreatingError.class, () -> formatedLine(null));
+    }
+
+    private String formatedLine(String word) {
+        if (word == null) throw new TreatingError();
         return word.trim().replaceAll("\\s+", " ");
+    }
+
+    public class TreatingError extends RuntimeException{
     }
 }
