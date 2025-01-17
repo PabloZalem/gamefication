@@ -14,13 +14,12 @@ public class Main {
             long variacoes = 1;
 
             for (char c: senha.toCharArray()) {
-                if ("aeiosAEIOS".indexOf(c) != -1) {
+                if (senha.indexOf(c) != -1) {
                     variacoes *= 3;
                 } else if (Character.isLetter(c)) {
                     variacoes *= 2;
                 }
             }
-            System.out.println(variacoes);
         }
     }
 }
