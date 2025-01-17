@@ -10,18 +10,15 @@ public class Main {
             int n = scanner.nextInt();
             scanner.nextLine();
 
-            if (n == 0) break;
-
             for (int i = 0; i < n; i++) {
                 String line = scanner.nextLine();
-                String formated = formatedLine(line);
-                System.out.println(formated);
+                String formatted = formatedLine(line);
+                System.out.println(formatted);
             }
         }
-        scanner.close();
     }
 
     private static String formatedLine(String line) {
-        return line.trim().replaceAll("\\s+", "");
+        return line.trim().replaceAll("\\s+", " ");
     }
 }
