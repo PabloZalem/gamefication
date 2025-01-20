@@ -13,13 +13,16 @@ public class Main {
             String senha = scanner.nextLine();
             long variacoes = 1;
 
-            for (char c: senha.toCharArray()) {
-                if (senha.indexOf(c) != -1) {
+            for (char c : senha.toCharArray()) {
+                if ("aeiosAEIOS".indexOf(c) != -1) {
                     variacoes *= 3;
                 } else if (Character.isLetter(c)) {
                     variacoes *= 2;
                 }
             }
+            System.out.println(variacoes);
         }
+
+        scanner.close();
     }
 }
