@@ -7,23 +7,15 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            // Lendo os valores de M e N
-            int M = scanner.nextInt();
             int N = scanner.nextInt();
+            int M = scanner.nextInt();
 
-            // Condição de término do programa
-            if (M == 0 && N == 0) {
-                break;
-            }
+            if (N == 0 && M == 0) break;
 
-            // Calcula a soma dos dois números
-            int soma = M + N;
+            int soma = N + M;
 
-            // Remove os zeros do resultado da soma
-            String somaSemZeros = String.valueOf(soma).replace("0", "");
-
-            // Imprime o resultado sem zeros
-            System.out.println(somaSemZeros);
+            String somazero = String.valueOf(soma).replace("0", "");
+            System.out.println(somazero);
         }
 
         scanner.close();

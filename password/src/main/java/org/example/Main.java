@@ -20,6 +20,7 @@ public class Main {
                     variacoes *= 2;
                 }
             }
+
             System.out.println(variacoes);
         }
 

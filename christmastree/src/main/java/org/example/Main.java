@@ -29,7 +29,5 @@ public class Main {
         if (scanner.hasNextInt()) {
             System.out.println();
         }
-
-        scanner.close();
     }
 }

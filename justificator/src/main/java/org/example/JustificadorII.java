@@ -10,8 +10,6 @@ public class JustificadorII {
             int casos = scanner.nextInt();
             scanner.nextLine();
 
-            if (casos == 0) break;
-
             String[] palavras = new String[casos];
             String[] textoSaida = new String[casos];
 
@@ -25,11 +23,11 @@ public class JustificadorII {
 
                 for (int j = 0; j < partes.length; j++) {
                     sb.append(partes[j]);
+
                     if (j < partes.length - 1) {
                         sb.append(" ");
                     }
                 }
-
                 textoSaida[i] = sb.toString();
             }
 
@@ -41,18 +39,16 @@ public class JustificadorII {
             }
 
             for (String texto : textoSaida) {
-                System.out.printf("%" + maior + "s\n" + texto);
+                System.out.printf("%" + maior + "s\n", texto);
             }
 
             if (scanner.hasNextInt() && scanner.nextInt() != 0) {
                 System.out.println();
-                scanner.nextInt();
+                scanner.nextLine();
             } else {
                 break;
             }
         }
-
         scanner.close();
     }
 }
-
